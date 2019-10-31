@@ -4,11 +4,10 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
-import { TaskService } from "./shared";
+import { TaskService, ConcludedDirective } from "./shared";
 import { ListTaskComponent } from './list';
 import { RegistryComponent } from './registry';
 import { EditComponent } from './edit';
-import { ConcludedDirective } from './shared/concluded.directive';
 
 @NgModule({
   declarations: [ListTaskComponent, RegistryComponent, EditComponent, ConcludedDirective],
