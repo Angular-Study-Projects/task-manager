@@ -1,0 +1,11 @@
+.well {
+    padding: 30px;
+    background-color: rgba(0, 0, 0, .055);
+    border-radius: 10px;
+    width: 50%;
+    margin: auto;
+}
+
+.alert {
+    margin-top: 4px;
+}
