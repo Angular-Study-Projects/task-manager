@@ -8,9 +8,10 @@ import { TaskService } from "./shared";
 import { ListTaskComponent } from './list';
 import { RegistryComponent } from './registry';
 import { EditComponent } from './edit';
+import { ConcludedDirective } from './shared/concluded.directive';
 
 @NgModule({
-  declarations: [ListTaskComponent, RegistryComponent, EditComponent],
+  declarations: [ListTaskComponent, RegistryComponent, EditComponent, ConcludedDirective],
   imports: [
     CommonModule,
     RouterModule,
