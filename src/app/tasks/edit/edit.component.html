@@ -1,30 +1,33 @@
-<h1>Editar tarefa</h1>
+<h1>Edit Task</h1>
 
 <div class="well">
-  <form>
+  <form #formTask="ngForm">
     <div class="form-group">
-      <label for="nome">Tarefa:</label>
+      <label for="nome">Task:</label>
       <input 
         type="text"
         class="form-control"
         id="nome"
+        [(ngModel)] = "task.name"
+        #name="ngModel"
         name="nome"
         minlength="5" 
         required> 
-      <div class="alert alert-danger">
-        <div >
-          Digite a tarefa.
+        <div *ngIf="name.errors && ( name.dirty || name.touched )" class="alert alert-danger">
+            <div [hidden]="!name.errors.required">
+                Write new task.
+            </div>
+            <div [hidden]="!name.errors.minlength">
+                New task must contain at least 5 letters
+            </div>
         </div>
-        <div >
-          A tarefa deve conter ao menos 5 caracteres.
-        </div>
-      </div>
     </div>
     <div class="form-group text-center">
       <input 
         type="submit"
+        (click)="update()"
         class="btn btn-success"
-        value="Atualizar">
+        value="Update">
         <a [routerLink]="['/']"
         class="btn btn-danger">
         <span class="glyphicon glyphicon-chevron-left" 

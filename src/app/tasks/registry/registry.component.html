@@ -1,9 +1,9 @@
-<h1>Cadastrar tarefa</h1>
+<h1>Registry new Task</h1>
 
 <div class="well">
   <form #formTask="ngForm">
     <div class="form-group">
-      <label for="nome">Tarefa:</label>
+      <label for="nome">Task:</label>
       <input 
         type="text"
         class="form-control"
@@ -16,10 +16,10 @@
         required>
       <div *ngIf="name.errors && ( name.dirty || name.touched )" class="alert alert-danger">
         <div [hidden]="!name.errors.required">
-          Digite a tarefa.
+          Write new task.
         </div>
         <div [hidden]="!name.errors.minlength">
-          A tarefa deve conter ao menos 5 caracteres.
+          New task must contain at least 5 letters
         </div>
       </div>
     </div>
