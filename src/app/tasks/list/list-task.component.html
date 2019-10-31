@@ -12,13 +12,16 @@
       </a>
   </th>
   </tr>
-  <tr>
-    <td>
-      
+  <tr *ngFor="let task of tasks">
+    <td
+      [class.success]="!task.concluded">
+      {{task.name}}
     </td>
     <td style="width: 70px" class="text-center">
       <input 
-        type="checkbox">
+        type="checkbox"
+        [value]="task.id"
+        [checked]="task.concluded">
     </td>
     <td class="text-center" style="width: 200px">
       <a 
@@ -37,4 +40,4 @@
   </tr>
 </table>
 
-<p>Nenhuma tarefa cadastrada.</p>
+<p *ngIf="tasks.length==0">Nenhuma tarefa cadastrada.</p>
