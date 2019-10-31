@@ -28,5 +28,11 @@ export class ListTaskComponent implements OnInit {
       this.tasks = this.taskService.listAll();
     }
   }
+  changeStatus( task: Task ): void {
+    if ( confirm( 'Would you like to change ' + task.name + ' to completed?' ) ) {
+      this.taskService.changeStatus(task.id);
+      this.tasks = this.taskService.listAll();
+    }
+  }
 
 }
